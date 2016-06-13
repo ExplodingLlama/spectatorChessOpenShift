@@ -22,15 +22,6 @@ $(document).ready(function() {
     
     var currentFen = START_FEN;
     
-    function readLichessTVdata(){
-        console.log(document.getElementById("chessboard").attr("class"));
-    }
-    
-    var source = new EventSource("stream");
-    source.onmessage = function(event) {
-        console.log($('body').find('iframe'));
-    };
-    
     //Auto-called when user makes a move
     var onChange = function(oldPos, newPos) {
         currentFen = ChessBoard.objToFen(newPos);
@@ -65,14 +56,11 @@ $(document).ready(function() {
     
     var pgnMoveIndex = 0;
     
-    var LichessTVBoard = null;
-    
     init();
     
     makeGoodThingsHappen(board.fen());
 
     function init() {
-        
         $.each(files, function(fileIndex, fileValue) {
             $.each(ranks, function(rankIndex, rankValue) {
                 var square = fileValue+rankValue;
@@ -88,35 +76,9 @@ $(document).ready(function() {
         board.position(fen);
         makeGoodThingsHappen(fen);
     });
-    
-    function parseFen($elem) {
-        if (!$elem || !$elem.jquery) {
-            $elem = $('.parse_fen');
-        }
-        $elem.each(function() {
-            var $this = $(this).removeClass('parse_fen');
-            var lm = $this.data('lastmove');
-            var color = $this.data('color');
-            var ground = $this.data('chessground');
-            var playable = $this.data('playable');
-            var config = {
-                coordinates: false,
-                viewOnly: !playable,
-                minimalDom: !playable,
-                fen: $this.data('fen'),
-                lastMove: lm ? [lm[0] + lm[1], lm[2] + lm[3]] : null
-            };
-            if (color) config.orientation = color;
-            if (ground) ground.set(config);
-            else $this.data('chessground', Chessground($this[0], config));
-        });
-    }
 
     //Called when PGN is being added
     $('#pgnbutton').on('click', function() {
-        
-        parseFen(LichessTVBoard);
-        
         var pgn = $('#pgninput').val();
         chess.load_pgn(pgn);
         pgnMoveList = chess.get_pgn_move_list();
