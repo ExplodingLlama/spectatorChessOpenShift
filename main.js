@@ -50,3 +50,4 @@ var port_number = server.listen(port || 8484);
 
 console.log('Server is running on ' + port_number.toString() + ' port');
 
+//don't know how to restart openshift
