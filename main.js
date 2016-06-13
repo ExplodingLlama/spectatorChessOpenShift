@@ -45,7 +45,7 @@ function serverWorking(response, absPath){
 }
 
 
-var port_number = server.listen(process.env.PORT || 8484);
+var port_number = server.listen(8080);
 
-console.log('Server is running on ' + port_number.toString() + ' port');
+console.log('Server is running on 8080 port');
 
