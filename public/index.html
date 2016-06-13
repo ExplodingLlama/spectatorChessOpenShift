@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SpectatorChess</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/chessboard.css">
+        <link rel="stylesheet" type="text/css" href="stylesheets/site.css">
+        <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="js/chessboard-0.3.0.js"></script>
+        <script type="text/javascript" src="js/chess.js"></script>
+        <script type="text/javascript" src="js/spectatorchess.js"></script>
+    </head>
+    <body>
+        <div id="header" class="headtext">
+            <span>Spectator Chess for your pleasure</span>
+        </div>
+	<div class="row chessboard-section">
+        <div id="chessboard" style="width: 500px" class="chessboard"></div>
+        <script src="http://en.lichess.org/tv/embed?theme=brown&bg=light"></script>
+	</div>
+    <div class="input area">
+        Enter FEN String (Castling info not necessary):<br>
+        <input type="text" id="feninput" size="80" placeholder="rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR"><br>
+        <button type="button" id="fenbutton">Click Me!</button> 
+    </div>
+    <div class="input area">
+        Enter PGN:<br>
+        <input type="text" id="pgninput" size="80"><br>
+        <button type="button" id="pgnbutton">Load PGN!</button> 
+        <button type="button" id="forwardbutton">Forward</button> 
+        <button type="button" id="backbutton">Back</button> 
+    </div> 
+    </body>
+</html>
+

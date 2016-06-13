@@ -1,0 +1,105 @@
+/* Elements */
+
+html {
+    
+}
+
+body {
+    color: #222;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+  color: #B58863;
+}
+
+code {
+    overflow: scroll;
+}
+
+/* Navigation Bar */
+
+.navbar {
+    border-bottom: 1px solid #eee;
+}
+
+.navbar-list {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.navbar-item {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    line-height: 6.5rem;    
+    margin-left: 35px;
+    margin-bottom: 0;
+    float: right;    
+    color: #222;
+}
+
+.navbar-header {
+    float: left;
+    margin-left: 0;
+}
+
+.headtext {
+    width: 75%;
+    text-align: center;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 10px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: #222;
+}
+
+/* Chessboard */
+
+.chessboard-section {
+    padding: 3rem;
+    border-bottom: 1px solid #eee;
+}
+
+.chessboard {
+    width: 75%;
+    margin: 0 auto;
+}
+
+/* Sections */
+
+.content-section {
+    padding: 3rem;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.heading {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: .2rem;
+    font-weight: 600;
+}
+
+.move-buttons {
+    padding: 2rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+button[disabled] {
+    opacity: 0.5;
+}
