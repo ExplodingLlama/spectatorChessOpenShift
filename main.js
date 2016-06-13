@@ -44,7 +44,9 @@ function serverWorking(response, absPath){
   });
 }
 
-var port_number = server.listen(process.env.PORT || 8484);
+var port = process.env.OPENSHIFT_NODEJS_PORT;
+//var ip = process.env.OPENSHIFT_NODEJS_IP;
+var port_number = server.listen(port || 8484);
 
 console.log('Server is running on ' + port_number.toString() + ' port');
 
