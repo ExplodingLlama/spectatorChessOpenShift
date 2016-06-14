@@ -44,8 +44,10 @@ function serverWorking(response, absPath){
   });
 }
 
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8448;
 
-var port_number = server.listen(8080);
+server.listen(port,ipaddress);
 
-console.log('Server is running on 8080 port');
+console.log('Server is running on ' + port.toString() + ' port');
 
