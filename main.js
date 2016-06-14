@@ -24,7 +24,7 @@ function send404(response) {
 }
 
 function sendPage(response, filePath, fileContents){
-  response.writeHead(200, {"ContentType": mime.lookup(path.basename(filePath))});
+  response.writeHead(200, {"ContentType": 'text/html'});
   response.end(fileContents);
 }
 
